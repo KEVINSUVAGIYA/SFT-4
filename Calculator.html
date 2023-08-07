@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="container">
+
+        <table>
+            <tr>
+            <td colspan="3"><input type="text" id="calc-input"></td>
+            <td onclick="addToInput('-')" class="number">-</td>
+        </tr>
+        <tr>
+            <td onclick="addToInput('1')" class="number">1</td>
+            <td onclick="addToInput('2')"class="number">2</td>
+            <td onclick="addToInput('3')"class="number">3</td>
+            <td onclick="addToInput('*')" class="number">*</td>
+        </tr>
+        <tr>
+            <td onclick="addToInput('4')" class="number">4</td>
+            <td onclick="addToInput('5')" class="number">5</td>
+            <td onclick="addToInput('6')" class="number">6</td>
+            <td onclick="addToInput('/')" class="number">/</td>
+        </tr>
+        <tr>
+            <td onclick="addToInput('7')" class="number">7</td>
+            <td onclick="addToInput('8')" class="number">8</td>
+            <td onclick="addToInput('9')" class="number">9</td>
+            <td onclick="addToInput('+')" class="number">+</td>
+        </tr>
+        <tr>
+            <td onclick="addToInput('0')" class="number">0</td>
+            <td onclick="resetInput()" class="number">C</td>
+            <td onclick="evaluation()" colspan="2">=</td>
+        </tr>
+    </table>
+</div>
+<script src="calculator.js"></script>
+</body>
+</html>

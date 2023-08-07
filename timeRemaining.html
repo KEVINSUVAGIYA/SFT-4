@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Remaining</title>
+</head>
+
+<body>
+    <input type="time" id="date" placeholder="Lunch Time">
+    <button type="button" onclick="getdiff()">get remaining Days</button>
+    <p id="ans">Output will show up here.</p>
+
+    <script>
+        function getdiff() {
+            let time = document.getElementById("date").value;
+            let nowHour = new Date().getHours();
+            let nowminute = new Date().getMinutes();
+
+            time = time.split(":");
+
+            let hour = time[0] - nowHour;
+            let minute = time[1] - nowminute;
+
+            console.log(time + "\n")
+            document.getElementById("ans").innerHTML = hour + " hours and" + minute + " minutes.";
+
+        }
+    </script>
+</body>
+
+</html>

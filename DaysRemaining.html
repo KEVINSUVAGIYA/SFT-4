@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Remaining</title>
+</head>
+<body>
+    <input type="date" id="date">
+    <button type="button" onclick="getdiff()">get remaining Days</button>
+    <p id="ans">Output will show up here.</p>
+
+    <script>
+        function getdiff(){
+            let date = new Date(document.getElementById("date").value).toLocaleDateString();
+            let today = new Date().toLocaleDateString();
+            console.log(today, date)
+        
+            var dateArray = date.split("/");
+            var todayArray = today.split("/");
+
+            countDays(dateArray,todayArray);
+            
+            //console.log(date.getTime() + today.getTime())
+            
+            // document.getElementById("ans").innerHTML = days + " Days Remaining from today";
+        }
+
+        function countDays(a1,a2){
+
+            let day = [31,28,31,30,31,30,31,31,30,31,30,31];
+            let d1 = parseInt(a1[1])
+            let d2 = parseInt(a2[1])
+
+            let m1 = parseInt(a1[0])
+            let m2 = parseInt(a2[0])
+
+            let y1 = parseInt(a1[2])
+            let y2 = parseInt(a2[2])
+
+            var days,month,year;
+            console.log(d1 + "\n" + typeof(d2))
+            if(d1>= d2){
+                days = d1-d2;
+                console.log(days)
+            }
+            else{
+                console.log(days+ " " + d1 + " " + d2)
+                days = m1-m2+day[m2];
+                m1 = m1-1;
+            }
+            if(m1>=m2){
+                month = m1-m2;
+            }else{
+                month = m1-m2+12;
+                y1 = y1-1;
+            }
+            year = y1-y2;
+
+            console.log(days,month,year);
+
+            document.getElementById("ans").innerHTML =days+ " days ," + month + " months and " + year + "years.";
+
+        }
+    </script>
+</body>
+</html>

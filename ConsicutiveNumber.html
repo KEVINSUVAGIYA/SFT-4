@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consicutive Number</title>
+</head>
+<body>
+    <input type="number" id="num">
+    <button type="button" onclick="setNumbers()">Set !</button>
+    <p id="ans">Your Output Will Come Here!</p>
+
+    <script>
+        function setNumbers(){
+
+            var num =document.getElementById("num").value;
+            var ans = num[0]+"";
+            for(let i=0; i<num.length-1;i++){
+                if(parseInt(num[i])+1==parseInt(num[i+1])){
+                    ans = ans + num[i+1]
+                }else{
+                    ans = ans + " " + num[i+1]
+                }
+                document.getElementById("ans").innerHTML=ans;
+            }
+        }
+    </script>
+</body>
+</html>
